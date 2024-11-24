@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff; 
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+            cursor: none; /* Hide default cursor */
+        }
+
+        header {
+            background-color: #ffcc00;
+            padding: 20px;
+            box-shadow: 0 10px 30px  #ffcc00;
+            box-shadow: #ffcc00;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        #gallery {
+            margin-top: 50px;
+        }
+
+        #gallery h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .gallery-container img {
+            width: 200px;
+            height: 600px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Party Poppers Animation */
+        .celebration {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .party-popper {
+            position: absolute;
+            bottom: -50px;
+            width: 100px;
+            height: 100px;
+            background: url('https://www.clipartmax.com/png/middle/161-1617941_party-popper-clip-art-party-popper-clipart.png') no-repeat center center;
+            background-size: contain;
+            animation: pop 2s ease-in-out infinite;
+        }
+
+        .party-popper.left {
+            left: -120px;
+            animation-delay: 0.5s;
+        }
+
+        .party-popper.right {
+            right: -120px;
+            animation-delay: 1s;
+        }
+
+        @keyframes pop {
+            0% { bottom: -50px; transform: scale(0); opacity: 0; }
+            50% { bottom: 200px; transform: scale(1.2); opacity: 1; }
+            100% { bottom: -50px; transform: scale(0); opacity: 0; }
+        }
+
+        /* Mouse Animation Effects */
+        .mouse-follow {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff5733;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: pulse 1s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.5); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        /* Sprinkles Animation */
+        .sprinkles {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff5733;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sprinkleEffect 1s forwards;
+        }
+
+        @keyframes sprinkleEffect {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                animation-timing-function: ease-in;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+                top: -10px;
+                left: -10px;
+            }
+        }
+
+        /* Gift Box Animation */
+        .gift-box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: #ff5733;
+            position: relative;
+            border-radius: 10px;
+            animation: giftBoxOpen 2s ease-out forwards;
+        }
+
+        .gift-box:before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 30px;
+            background-color: #ffcc00;
+        }
+
+        .gift-box .lid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #ffcc00;
+            border-radius: 10px 10px 0 0;
+            transform-origin: bottom;
+            transform: rotateX(0);
+            animation: lidOpen 2s ease-out forwards;
+        }
+
+        .gift-box .ribbons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 5px;
+            background-color: #fff;
+            animation: ribbonEffect 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes giftBoxOpen {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes lidOpen {
+            0% {
+                transform: rotateX(0);
+            }
+            100% {
+                transform: rotateX(-180deg);
+            }
+        }
+
+        @keyframes ribbonEffect {
+            0% {
+                transform: translate(-50%, -50%) rotate(0);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+     
+        
+    </style>
+</head>
+<body>
+    <!-- Gift Box Animation -->
+    <div class="gift-box">
+        <div class="lid"></div>
+        <div class="ribbons"></div>
+    </div>
+
+    <header>
+        <h1>✨🎉Happy Birthday Shayyan from Dawood! ✨🎉</h1>
+    </header>
+
+    <section id="gallery">
+        <h2>Memory Lane</h2>
+        <div class="gallery-container">
+            <img src="Screenshot 2024-11-24 033610.png" alt="photo1">
+            <img src="Screenshot 2024-11-24 033802.png" alt="photo2">
+            <!-- Add more images here -->
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Wishing you an amazing year ahead!</p>
+    </footer>
+
+    <div class="celebration">
+        <div class="party-popper left"></div>
+        <div class="party-popper right"></div>
+    </div>
+
+    <!-- Mouse Follow Animation -->
+    <div class="mouse-follow" id="mouse-follow"></div>
+
+    <!-- Happy Birthday song -->
+    <audio autoplay loop>
+        <source src="Happy Birthday Shayann.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+
+    <script>
+        // Mouse follow effect
+        const mouseFollow = document.getElementById('mouse-follow');
+
+        document.addEventListener('mousemove', (e) => {
+            mouseFollow.style.left = e.pageX - 10 + 'px'; // Adjust to center the animation
+            mouseFollow.style.top = e.pageY - 10 + 'px'; // Adjust to center the animation
+
+            // Create sprinkles effect
+            const sprinkle = document.createElement('div');
+            sprinkle.classList.add('sprinkles');
+            sprinkle.style.left = e.pageX - 5 + 'px';  // Adjust position relative to mouse
+            sprinkle.style.top = e.pageY - 5 + 'px';
+            document.body.appendChild(sprinkle);
+
+            // Remove the sprinkle after animation ends
+            setTimeout(() => {
+                sprinkle.remove();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
